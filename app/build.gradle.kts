@@ -36,9 +36,13 @@ android {
         jvmTarget = "1.8"
     }
 
-    dataBinding{
-       enable = true
+    dataBinding {
+        enable = true
     }
+//    testOptions {
+//        unitTests.includeAndroidResources = true
+//    }
+
 }
 
 dependencies {
@@ -65,5 +69,26 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
 
     //Glide
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    // JUnit 4 – Core testing framework
+    testImplementation("junit:junit:4.13.2")
+
+    // Mockito – For mocking dependencies
+    testImplementation("org.mockito:mockito-core:5.11.0")
+
+    // Kotlin Coroutines Test (optional for testing suspend functions)
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
+
+    // LiveData testing (optional but useful for ViewModel tests)
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+
+    // AssertJ or Truth (optional, for more readable assertions)
+    testImplementation("com.google.truth:truth:1.4.2")
+
+    // AndroidX Test - Core (useful for rules like InstantTaskExecutorRule)
+    testImplementation("androidx.test:core:1.5.0")
+
+    // AndroidX Test - JUnit
+    testImplementation("androidx.test.ext:junit:1.1.5")
+
 }
